@@ -1,0 +1,25 @@
+<?xml version="1.0"?> 
+<launch>
+<arg name="output" default="screen" /> 
+<arg name="required" default="true" />  
+<arg name="respawn" default="false" /> 
+<arg name="interface_tcp_server"     default="192.168.8.100" />
+<arg name="ip_addr_tcp_server"    default="" />  <!--219.216.101.109-->
+<arg name="port_tcp_server"          default="65500" />  <!--65500-->
+
+<arg name="interface_tcp_client"     default="192.168.8.101" />
+<arg name="ip_addr_tcp_client"    default="" />
+<arg name="port_tcp_client"          default="65500" />
+<arg name="pubHz"          default="30.0" />
+
+<node pkg="TCPtest" type="server" name="server" respawn="$(arg respawn)" required="$(arg required)" output="$(arg output)">
+
+<param name="interface_tcp_server"     value="$(arg interface_tcp_server)" />
+<param name="ip_addr_tcp_server"    value="$(arg ip_addr_tcp_server)" />
+<param name="port_tcp_server"          value="$(arg port_tcp_server)" />
+<param name="interface_tcp_client"     value="$(arg interface_tcp_client)" />
+<param name="ip_addr_tcp_client"    value="$(arg ip_addr_tcp_client)" />
+<param name="port_tcp_client"          value="$(arg port_tcp_client)" />
+<param name="pubHz"          value="$(arg pubHz)" />
+</node>
+</launch> 

@@ -1,0 +1,8 @@
+<?xml version="1.0"?> 
+<launch>
+<arg name="output" default="screen" /> 
+<arg name="required" default="true" />  
+<arg name="respawn" default="false" /> 
+<node pkg="TCPtest" type="client" name="client" respawn="$(arg respawn)" required="$(arg required)" output="$(arg output)">
+</node>
+</launch> 
